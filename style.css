@@ -87,3 +87,12 @@ body {
 .btn:hover {
   background: #1f5f75;
 }
+
+.score {
+  display: inline-block;
+  float: left;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #f1f1f1;
+  font-size: 14px;
+}
