@@ -26,7 +26,7 @@ body {
 /* Top row (count + score later if needed) */
 .count {
   display: inline-block;
-  float: right;
+  align-self: right;
   padding: 4px 10px;
   border-radius: 8px;
   background: #f1f1f1;
@@ -90,7 +90,7 @@ body {
 
 .score {
   display: inline-block;
-  float: left;
+  align-self: left;
   padding: 4px 10px;
   border-radius: 8px;
   background: #f1f1f1;
