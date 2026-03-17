@@ -1,42 +1,38 @@
 let score = 0;
-let selectedIndex = null;
-let answered = false;
+let selected = -1;
 
 const options = document.querySelectorAll(".options button");
-const submitBtn = document.getElementById("submit");
-const correctIndex = 2; // Delhi
+const submit = document.getElementById("submit");
 
-// when user clicks option → just select (no scoring yet)
+// select option
 options.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    if (answered) return;
+  btn.onclick = () => {
+    selected = index;
 
-    // remove previous selection highlight
-    options.forEach(b => b.style.backgroundColor = "#f5f5f5");
+    // reset all colors
+    options.forEach(b => b.style.background = "#f5f5f5");
 
-    btn.style.backgroundColor = "#dcdcdc"; // selected color
-    selectedIndex = index;
-  });
+    // highlight selected
+    btn.style.background = "yellow";
+  };
 });
 
-// when user clicks submit → check answer
-submitBtn.addEventListener("click", () => {
-  if (selectedIndex === null) {
-    alert("Please select an option first!");
+// submit answer
+submit.onclick = () => {
+  if (selected === -1) {
+    alert("Select an option first!");
     return;
   }
 
-  if (answered) return;
-  answered = true;
-
-  if (selectedIndex === correctIndex) {
-    options[selectedIndex].style.backgroundColor = "green";
+  // correct answer = 2 (Delhi)
+  if (selected === 2) {
+    options[selected].style.background = "green";
     score++;
   } else {
-    options[selectedIndex].style.backgroundColor = "red";
-    options[correctIndex].style.backgroundColor = "green";
+    options[selected].style.background = "red";
+    options[2].style.background = "green";
   }
 
   // update score
   document.querySelector(".score").innerText = "Score: " + score;
-});
+};
