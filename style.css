@@ -1,0 +1,57 @@
+* {
+background: #2A7B9B;
+background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+font-family: Georgia, 'Times New Roman', Times, serif;
+text-align: center;
+}
+
+.heading{
+    font-style: oblique;
+    margin: 25px;
+}
+
+.container{
+    max-width: 540px;
+    margin: auto;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+.count{
+    display: flex;
+    justify-self: flex-end;
+    padding: 2px;
+    justify-content: center;
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.question{
+    background: #ffffff;
+}
+
+.option{
+    background: #ffffff;
+    
+}
+
+.buttongroup{
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 24px;
+    background: #ffffff;
+}
+
+.btn {
+  flex: 1;
+  text-align: center;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 14px;
+  margin-top: 50px;
+}
