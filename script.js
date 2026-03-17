@@ -1,28 +1,42 @@
 let score = 0;
+let selectedIndex = null;
 let answered = false;
 
-// select all option buttons
 const options = document.querySelectorAll(".options button");
+const submitBtn = document.getElementById("submit");
+const correctIndex = 2; // Delhi
 
-// correct answer (Delhi = index 2)
-const correctIndex = 2;
-
+// when user clicks option → just select (no scoring yet)
 options.forEach((btn, index) => {
   btn.addEventListener("click", () => {
-    
-    if (answered) return; // prevent multiple clicks
-    answered = true;
+    if (answered) return;
 
-    if (index === correctIndex) {
-      btn.style.backgroundColor = "green";
-      score++;
-    } else {
-      btn.style.backgroundColor = "red";
-      // highlight correct one also
-      options[correctIndex].style.backgroundColor = "green";
-    }
+    // remove previous selection highlight
+    options.forEach(b => b.style.backgroundColor = "#f5f5f5");
 
-    // update score on screen
-    document.querySelector(".score").innerText = "Score: " + score;
+    btn.style.backgroundColor = "#dcdcdc"; // selected color
+    selectedIndex = index;
   });
+});
+
+// when user clicks submit → check answer
+submitBtn.addEventListener("click", () => {
+  if (selectedIndex === null) {
+    alert("Please select an option first!");
+    return;
+  }
+
+  if (answered) return;
+  answered = true;
+
+  if (selectedIndex === correctIndex) {
+    options[selectedIndex].style.backgroundColor = "green";
+    score++;
+  } else {
+    options[selectedIndex].style.backgroundColor = "red";
+    options[correctIndex].style.backgroundColor = "green";
+  }
+
+  // update score
+  document.querySelector(".score").innerText = "Score: " + score;
 });

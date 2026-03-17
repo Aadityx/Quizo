@@ -1,4 +1,3 @@
-/* Apply gradient ONLY to body */
 body {
   background: linear-gradient(90deg, rgba(42,123,155,1) 0%, rgba(87,199,133,1) 50%, rgba(237,221,83,1) 100%);
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -6,14 +5,12 @@ body {
   margin: 0;
 }
 
-/* Heading */
 .heading {
   font-style: oblique;
   margin: 25px;
   color: white;
 }
 
-/* Main container */
 .container {
   max-width: 540px;
   margin: auto;
@@ -23,30 +20,17 @@ body {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
-/* Top row (count + score later if needed) */
-.count {
-  display: inline-block;
-  align-self: right;
-  padding: 4px 10px;
-  border-radius: 8px;
-  background: #f1f1f1;
-  font-size: 14px;
-}
-
-/* Question */
 .question {
   background: none;
   margin: 30px 0;
 }
 
-/* Options container */
 .options {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Option buttons */
 .options button {
   padding: 12px;
   border: none;
@@ -57,12 +41,14 @@ body {
   font-size: 15px;
 }
 
-/* Hover effect */
 .options button:hover {
-  background: #dcdcdc;
+  background: #e5ff00;
 }
 
-/* Button group */
+.options button.selected {
+  background: #e5ff00;
+}
+
 .buttongroup {
   display: flex;
   justify-content: space-between;
@@ -70,10 +56,9 @@ body {
   margin-top: 24px;
 }
 
-/* Next/Prev buttons */
 .btn {
-  flex: 1;
-  padding: 14px;
+  margin: auto;
+  padding: 15px;
   font-size: 15px;
   border-radius: 14px;
   border: none;
@@ -83,7 +68,6 @@ body {
   transition: 0.3s;
 }
 
-/* Hover effect */
 .btn:hover {
   background: #1f5f75;
 }
